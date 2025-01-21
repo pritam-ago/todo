@@ -7,7 +7,7 @@ import authRoutes from './routes/authRoutes.js';
 import taskRoutes from './routes/taskRoutes.js';
 
 const corsOptions = {
-  origin: 'https://todo-blockchain-lovat.vercel.app',
+  origin: 'http://localhost:5000',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
