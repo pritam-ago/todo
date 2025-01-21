@@ -7,7 +7,7 @@ import authRoutes from './routes/authRoutes.js';
 import taskRoutes from './routes/taskRoutes.js';
 
 const corsOptions = {
-  origin: 'http://localhost:5000',
+  origin: 'https://localhost:5000',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
