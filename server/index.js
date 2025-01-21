@@ -14,11 +14,15 @@ const corsOptions = {
 
 dotenv.config();
 
-app.use(bodyParser.json());
-app.use(express.json())
-app.use(cors(corsOptions));
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log('MongoDB connection error:', err));
 
 const app = express();
+
+app.use(cors(corsOptions));
+app.use(bodyParser.json());
+app.use(express.json())
 
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
