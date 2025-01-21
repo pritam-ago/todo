@@ -6,6 +6,12 @@ import bodyParser from 'body-parser';
 import authRoutes from './routes/authRoutes.js';
 import taskRoutes from './routes/taskRoutes.js';
 
+const corsOptions = {
+  origin: 'https://todo-blockchain-lovat.vercel.app',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
 dotenv.config();
 
 mongoose.connect(process.env.MONGO_URI)
@@ -14,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 const app = express();
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 app.use('/api/auth', authRoutes);

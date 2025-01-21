@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an axios instance
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // Base URL for the backend API
+  baseURL: 'https://todo-blockchain-lovat.vercel.app/api', // Base URL for the backend API
 });
 
 // Add a request interceptor to attach the token to every request
