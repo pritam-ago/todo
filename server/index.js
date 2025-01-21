@@ -22,6 +22,7 @@ const app = express();
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
+app.use(express.json())
 
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
