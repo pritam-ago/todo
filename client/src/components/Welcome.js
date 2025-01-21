@@ -8,7 +8,7 @@ const Welcome = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      api.post('/auth/verify', { token })
+      api.post('/api/auth/verify', { token })
         .then(() => {
           navigate('/tasks');
         })

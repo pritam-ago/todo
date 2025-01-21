@@ -25,10 +25,10 @@ const TaskForm = ({ task, onTaskAdded, onTaskUpdated }) => {
     const payload = { title, deadline };
     try {
       if (task) {
-        const response = await api.put(`/tasks/${task._id}`, payload);
+        const response = await api.put(`/api/tasks/${task._id}`, payload);
         onTaskUpdated(response.data.task);
       } else {
-        const response = await api.post('/tasks/create', payload);
+        const response = await api.post('/api/tasks/create', payload);
         onTaskAdded(response.data.task);
       }
       setTitle('');

@@ -27,7 +27,7 @@ const Signup = () => {
         phoneNumber,
         password
       };
-      await api.post('/auth/signup', newUser);
+      await api.post('/api/auth/signup', newUser);
       alert('Signup successful! Please log in.');
       navigate('/login');
     } catch (error) {

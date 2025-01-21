@@ -12,7 +12,7 @@ const TaskList = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await api.get('/tasks');
+        const response = await api.get('/api/tasks');
         setTasks(response.data.tasks);
       } catch (error) {
         console.error('Error fetching tasks:', error.message);
@@ -34,7 +34,7 @@ const TaskList = () => {
 
   const handleDeleteClick = async (taskId) => {
     try {
-      await api.delete(`/tasks/${taskId}`);
+      await api.delete(`/api/tasks/${taskId}`);
       setTasks(tasks.filter((task) => task._id !== taskId));
     } catch (error) {
       console.error('Error deleting task:', error);
@@ -43,7 +43,7 @@ const TaskList = () => {
 
   const handleStatusChange = async (taskId, newStatus) => {
     try {
-      const response = await api.put(`/tasks/${taskId}`, { status: newStatus });
+      const response = await api.put(`/api/tasks/${taskId}`, { status: newStatus });
       setTasks(tasks.map((task) => (task._id === taskId ? response.data.task : task)));
     } catch (error) {
       console.error('Error updating task status:', error);
