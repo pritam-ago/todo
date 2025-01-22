@@ -10,7 +10,7 @@ const corsOptions = {
   origin: 'https://localhost:5000',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  Credentials : true
+  credentials : true
 
 };
 
@@ -27,12 +27,7 @@ app.use('/api/tasks', taskRoutes);
 
 
 app.get("/", (req, res) => {
-  res.send("Hi boiss")
-  res.setHeader("Access-Control-Allow-Origin", "*")
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Max-Age", "1800");
-  res.setHeader("Access-Control-Allow-Headers", "content-type");
-  res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
+  res.send("Hi boiss");
    });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
