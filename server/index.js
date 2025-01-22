@@ -26,7 +26,7 @@ app.use('/api/tasks', taskRoutes);
 
 
 
-router.get("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hi boiss")
   res.setHeader("Access-Control-Allow-Origin", "*")
   res.setHeader("Access-Control-Allow-Credentials", "true");
