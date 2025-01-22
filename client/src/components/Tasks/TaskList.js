@@ -72,7 +72,7 @@ const TaskList = () => {
               task={task} 
               onEditClick={() => setSelectedTask(task)}
               onDeleteClick={() => handleDeleteClick(task._id)}
-              onStatusChange={handleStatusChange}  // Pass status change handler
+              onStatusChange={handleStatusChange} 
             />
           ))
         ) : (

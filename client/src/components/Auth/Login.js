@@ -10,7 +10,7 @@ const Login = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      navigate('/tasks'); // Redirect to tasks if token exists
+      navigate('/tasks'); 
     }
   }, [navigate]);
 
@@ -18,8 +18,8 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await api.post('/api/auth/login', { email, password });
-      localStorage.setItem('token', response.data.token); // Store the JWT
-      navigate('/tasks'); // Redirect to tasks page
+      localStorage.setItem('token', response.data.token);
+      navigate('/tasks'); 
     } catch (error) {
       console.error('Login error:', error);
       alert('Invalid credentials. Please try again.');

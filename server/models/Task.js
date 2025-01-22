@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import moment from 'moment';  // We'll use this for easy date comparison
+import moment from 'moment'; 
 
 const TaskSchema = new mongoose.Schema({
   title: { 
@@ -12,7 +12,7 @@ const TaskSchema = new mongoose.Schema({
     required: [true, 'Deadline is required'],
     validate: {
       validator: function (v) {
-        return moment(v).isAfter(moment());  // Validate that the deadline is after the current date
+        return moment(v).isAfter(moment());
       },
       message: 'Deadline must be a future date.'
     }

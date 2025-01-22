@@ -13,7 +13,7 @@ const Signup = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      navigate('/tasks'); // Redirect to tasks if token exists
+      navigate('/tasks');
     }
   }, [navigate]);
 
