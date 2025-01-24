@@ -7,11 +7,10 @@ import authRoutes from './routes/authRoutes.js';
 import taskRoutes from './routes/taskRoutes.js';
 
 const corsOptions = {
-  origin: 'https://localhost:5000',
+  origin: 'https://todo-blockchain-client.vercel.app',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials : true
-
 };
 
 dotenv.config();
