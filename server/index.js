@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 
 const corsOptions = {
-  origin: ['http://localhost:5000', 'http://10.11.104.175:5000'],
+  origin: ['http://localhost:5000', 'http://10.11.104.175:5000', 'https://todo-client-six.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };

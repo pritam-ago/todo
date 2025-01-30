@@ -29,6 +29,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      <button className="back-button" onClick={() => navigate('/')}>Back</button>
       <h2 className="login-title">Login</h2>
       <form className="login-form" onSubmit={handleLogin}>
         <input

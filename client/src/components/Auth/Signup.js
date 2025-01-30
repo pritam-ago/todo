@@ -36,10 +36,11 @@ const Signup = () => {
       alert('Signup failed. Please try again.');
     }
   };
-
   return (
     <div className="signup-container">
+      <button className="back-button" onClick={() => navigate('/')}>Back</button>
       <h2 className="signup-title">Signup</h2>
+      
       <form className="signup-form" onSubmit={handleSignup}>
         <input
           type="text"
