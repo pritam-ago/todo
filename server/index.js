@@ -2,12 +2,10 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
 import authRoutes from './routes/authRoutes.js';
 import taskRoutes from './routes/taskRoutes.js';
 
 dotenv.config();
-
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -21,7 +19,6 @@ const corsOptions = {
 // Middleware
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use(bodyParser.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
