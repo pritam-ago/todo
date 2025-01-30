@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import api from '../../services/api';
 import TaskForm from './TaskForm';
 import TaskItem from './TaskItem';
+import './Tasks.css';
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
@@ -35,7 +36,7 @@ const TaskList = () => {
   const handleDeleteClick = async (taskId) => {
     try {
       await api.delete(`/api/tasks/${taskId}`);
-      setTasks(tasks.filter((task) => task._id !== taskId));
+      setTasks(tasks.filter((task) => task._id !== taskId)); // Remove task from state
     } catch (error) {
       console.error('Error deleting task:', error);
     }
@@ -56,16 +57,16 @@ const TaskList = () => {
   };
 
   return (
-    <div>
-      <h1>Your Tasks</h1>
-      <button onClick={handleLogout}>Logout</button>
+    <div className="task-list-container">
+      <h1 className="task-list-title">Your Tasks</h1>
+      <button className="logout-button" onClick={handleLogout}>Logout</button>
       <TaskForm 
         task={selectedTask} 
         onTaskAdded={handleTaskAdded} 
         onTaskUpdated={handleTaskUpdated} 
       />
-      <ul>
-        {Array.isArray(tasks) ? (
+      <ul className="task-list">
+        {Array.isArray(tasks) && tasks.length > 0 ? (
           tasks.map((task) => (
             <TaskItem 
               key={task._id} 
@@ -76,7 +77,7 @@ const TaskList = () => {
             />
           ))
         ) : (
-          <p>No tasks available.</p>
+          <p className="no-tasks-message">No tasks available.</p>
         )}
       </ul>
     </div>

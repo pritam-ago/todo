@@ -7,15 +7,16 @@ const TaskItem = ({ task, onEditClick, onDeleteClick, onStatusChange }) => {
   };
 
   return (
-    <li>
+    <li className="task-item">
       <input 
         type="checkbox" 
         checked={task.status === 'completed'} 
         onChange={handleCheckboxChange} 
+        className="task-checkbox"
       />
-      <span>{task.title} - {new Date(task.deadline).toLocaleString()}</span>
-      <button onClick={onEditClick}>Edit</button>
-      <button onClick={onDeleteClick}>Delete</button>
+      <span className="task-title">{task.title} - {new Date(task.deadline).toLocaleString()}</span>
+      <button onClick={() => onEditClick(task._id)} className="task-edit-button">Edit</button>
+      <button onClick={() => onDeleteClick(task._id)} className="task-delete-button">Delete</button>
     </li>
   );
 };

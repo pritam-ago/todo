@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 // Configure CORS options
 const corsOptions = {
   origin: 'http://localhost:5000',
-  methods: ['GET', 'POST'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
 

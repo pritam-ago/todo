@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import Signup from './components/Auth/Signup';

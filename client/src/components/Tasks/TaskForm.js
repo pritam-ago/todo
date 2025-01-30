@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
+import './Tasks.css';
 
 const TaskForm = ({ task, onTaskAdded, onTaskUpdated }) => {
   const [title, setTitle] = useState(task ? task.title : '');
@@ -39,9 +40,10 @@ const TaskForm = ({ task, onTaskAdded, onTaskUpdated }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="task-form" onSubmit={handleSubmit}>
       <input
         type="text"
+        className="task-input"
         placeholder="Task Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
@@ -49,11 +51,14 @@ const TaskForm = ({ task, onTaskAdded, onTaskUpdated }) => {
       />
       <input
         type="datetime-local"
+        className="task-input"
         value={deadline}
         onChange={(e) => setDeadline(e.target.value)}
         required
       />
-      <button type="submit">{task ? 'Update Task' : 'Add Task'}</button>
+      <button type="submit" className="task-button">
+        {task ? 'Update Task' : 'Add Task'}
+      </button>
     </form>
   );
 };

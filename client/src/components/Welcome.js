@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
+import './Welcome.css';
 
 const Welcome = () => {
   const navigate = useNavigate();
@@ -19,9 +20,10 @@ const Welcome = () => {
   }, [navigate]);
 
   return (
-    <div>
-      <h1>Welcome</h1>
-      <p>Please <a href="/login">Login</a> or <a href="/signup">Signup</a> to continue.</p>
+    <div className="welcome-container">
+      <h1 className="welcome-title">Welcome</h1>
+      <button className="welcome-button" onClick={() => navigate('/login')}>Login</button>
+      <button className="welcome-button" onClick={() => navigate('/signup')}>Signup</button>
     </div>
   );
 };

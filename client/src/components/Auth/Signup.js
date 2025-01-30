@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../services/api';
+import './Signup.css';
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -37,14 +38,15 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <h2>Signup</h2>
-      <form onSubmit={handleSignup}>
+    <div className="signup-container">
+      <h2 className="signup-title">Signup</h2>
+      <form className="signup-form" onSubmit={handleSignup}>
         <input
           type="text"
           placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className="signup-input"
           required
         />
         <input
@@ -52,6 +54,7 @@ const Signup = () => {
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          className="signup-input"
           required
         />
         <input
@@ -59,6 +62,7 @@ const Signup = () => {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          className="signup-input"
           required
         />
         <input
@@ -66,6 +70,7 @@ const Signup = () => {
           placeholder="Phone Number"
           value={phoneNumber}
           onChange={(e) => setPhoneNumber(e.target.value)}
+          className="signup-input"
           required
         />
         <input
@@ -73,9 +78,10 @@ const Signup = () => {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className="signup-input"
           required
         />
-        <button type="submit">Signup</button>
+        <button type="submit" className="signup-button">Signup</button>
       </form>
     </div>
   );
