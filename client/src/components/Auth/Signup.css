@@ -1,6 +1,4 @@
-/* Signup.css */
 
-/* General styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -15,7 +13,6 @@ body {
     padding: 20px;
   }
   
-  /* Signup container */
   .signup-container {
     width: 100%;
     max-width: 400px;
@@ -72,7 +69,6 @@ body {
     margin-top: 10px;
   }
   
-  /* Responsive Styles */
   @media (max-width: 600px) {
     .signup-container {
       padding: 20px;
