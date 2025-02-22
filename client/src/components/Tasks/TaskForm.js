@@ -12,7 +12,7 @@ const TaskForm = ({ task, onTaskAdded, onTaskUpdated }) => {
       setDeadline(task.deadline);
     }
   }, [task]);
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const now = new Date();
@@ -22,7 +22,7 @@ const TaskForm = ({ task, onTaskAdded, onTaskUpdated }) => {
       alert('Deadline must be in the future.');
       return;
     }
-
+    
     const payload = { title, deadline };
     try {
       if (task) {
